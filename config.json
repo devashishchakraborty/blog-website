@@ -1,0 +1,19 @@
+{
+	"params":
+	{
+		"local_server":"True",
+		"local_uri":"mysql://root:@localhost/<db_name>", 
+		"prod_uri":"mysql://root:@localhost/<db_name>",
+		"fb_url":"https://www.facebook.com/codebruh",
+		"tw_url":"https://www.twitter.com/codebruh",
+		"gt_url":"https://www.github.com/codebruh",
+		"blog_name":"CodeBruh",
+		"tag_line":"A Blog by Noob Programmers",
+		"gmail_user":"example@gmail.com",
+		"gmail_password":"pass",
+		"about":"Hi I am Devashish.",
+		"no_of_posts":3,
+		"admin_user":"dvaita",
+		"admin_password":"dvaita"
+	}
+}

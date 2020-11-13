@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>{{ params['blog_name'] }} - Dashboard</h2>
+            <span class="subheading">{{ params['tag_line'] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+      <div class="container">
+        <h2>Basic Actions</h2>
+        <a href="/new-post"><button class="btn btn-primary">Add New Post</button></a>
+        <hr>
+        <h2>Edit Posts</h2>
+        <p>Edit your posts here</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Serial No.</th>
+              <th>Title</th>
+              <th>Date</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          {% for post in posts %}
+          <tbody>
+            <tr>
+              <td>{{ post.sno }}</td>
+              <td>{{ post.title }}</td>
+              <td>{{ post.date }}</td>
+              <td><a href="/edit/{{ post.sno }}"><button class="btn btn-primary">Edit</button></a></td>
+              <td><a href="/delete/{{ post.sno }}"><button class="btn btn-delete" style="background-color: white; border-color: #0085A1;">Delete</button></a></td>
+            </tr>
+          </tbody>
+          {% endfor %}
+        </table>
+      </div>
+        
+        <!-- Pager -->
+        <hr>
+                <a href="/logout"><button class="btn btn-logout" style="float: right; background-color: white; border-color: #0085A1;">Logout</button></a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock content %}

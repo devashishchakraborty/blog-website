@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>{{ params['blog_name'] }} - Dashboard</h2>
+            <span class="subheading">{{ params['tag_line'] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+<div class="container">
+	<div class="row">
+	    
+	    <div class="col-lg-8 col-md-10 mx-auto">
+	        
+    		<h1>Create post</h1>
+    		
+    		<form action="/new-post" method="POST">
+    		    
+                <div class="form-group">
+                    <label for="title">Title<span class="require">*</span></label>
+                    <input type="text" class="form-control" placeholder="Title" id="title" name="title" required data-validation-required-message="Please enter Title.">
+                </div>
+
+
+    		    <div class="form-group has-error">
+    		        <label for="slug">Slug<span class="require">*</span> <small>(This field use in url path.)</small></label>
+    		        <input type="text" class="form-control" name="slug" />
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <label for="title">Tag Line<span class="require">*</span></label>
+    		        <input type="text" class="form-control" name="tag_line"/>
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <label for="content">Content</label>
+    		        <textarea rows="5" class="form-control" name="content"></textarea>
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <p><span class="require">*</span> - required fields</p>
+    		    </div>
+    		    
+    		    <div class="form-group">
+    		        <button type="submit" class="btn btn-primary">
+    		            Create
+    		        </button>
+    		        <button class="btn btn-default">
+    		            Cancel
+    		        </button>
+    		    </div>
+    		    
+    		</form>
+            <hr>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
